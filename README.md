@@ -7,13 +7,22 @@
 ```
 web3-learning/
 ├── learn-point/
-│   ├── bitcoin/          # 比特币相关学习
-│   │   ├── address/      # 比特币地址生成（P2PKH）
-│   │   ├── pow/          # 工作量证明（Proof of Work）
-│   │   ├── reward.go     # 区块奖励与减半机制
-│   │   └── transaction_rate.go  # 交易费率相关
-│   └── ethereum/         # 以太坊相关学习
-│       └── address/      # 以太坊地址生成
+│   ├── bitcoin/                          # 比特币相关学习
+│   │   ├── address/                      # 比特币地址生成（P2PKH）
+│   │   │   ├── main.go
+│   │   │   └── 地址.png
+│   │   ├── pow/                          # 工作量证明（Proof of Work）
+│   │   ├── merkle/                       # 默克尔树（Merkle Tree）
+│   │   ├── reward.go                     # 区块奖励与减半机制
+│   │   ├── transaction_rate.go           # 交易费率相关
+│   │   └── transaction_rate_v2.go        # 交易费率 v2
+│   ├── ethereum/                         # 以太坊相关学习
+│   │   ├── address/                      # 以太坊地址生成
+│   │   ├── Merkle-Patricia-Trie/         # 默克尔帕特里夏树（世界状态树）
+│   │   └── gasfee/                       # Gas 费用机制（EIP-1559）
+│   └── tech/                             # 通用技术专题
+│       └── Zero-Knowledge-Proof/         # 零知识证明（Schnorr 协议）
+├── .gitignore
 └── LICENSE
 ```
 
@@ -76,9 +85,11 @@ go run main.go
 ## 学习路径建议
 
 1. **密码学基础** → 先学习地址生成，理解椭圆曲线与哈希函数
-2. **共识机制** → 学习 PoW，理解比特币如何达成去中心化共识
-3. **经济模型** → 理解代币发行与通胀机制
-4. **对比学习** → 对比比特币与以太坊的异同
+2. **数据结构** → 学习 Merkle Tree 与 MPT，理解数据完整性验证与状态管理
+3. **共识机制** → 学习 PoW，理解比特币如何达成去中心化共识
+4. **经济模型** → 理解代币发行与通胀机制，掌握 Gas 费用计算
+5. **对比学习** → 对比比特币与以太坊的异同
+6. **高级主题** → 探索零知识证明等前沿密码学技术
 
 ## 参考资源
 
