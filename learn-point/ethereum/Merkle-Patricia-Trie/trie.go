@@ -115,7 +115,13 @@ func (t *Trie) Insert(key, value []byte) {
 // value: 要插入的值
 // 返回: 新的节点（可能是新创建的，也可能是修改后的）
 func (t *Trie) insert(node Node, key, value []byte) Node {
-	// 空节点：直接创建叶子节点
+	// 空节点或 nil：直接创建叶子节点
+	if node == nil {
+		return &LeafNode{
+			Path:  key,
+			Value: value,
+		}
+	}
 	if _, ok := node.(*EmptyNode); ok {
 		return &LeafNode{
 			Path:  key,
